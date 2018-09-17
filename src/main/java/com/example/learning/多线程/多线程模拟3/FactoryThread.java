@@ -28,9 +28,14 @@ public class FactoryThread extends Thread {
 
         Thread dpzThread=new Thread(new EmployeeDPZRunnable(),"大胖子");
 
-        //让线程停止
-        djy.isBoolean=false;
-        xjy.isBoolean=false;
+        //让线程停止（）正确的方式
+        //djy.isBoolean=false;
+        //xjy.isBoolean=false;
+
+        //让线程停止（）错误的方式
+        djyThread.stop();
+        xjyThread.stop();
+
 
         try {
             Thread.sleep(1000);
